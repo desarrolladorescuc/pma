@@ -1,14 +1,14 @@
 package pma
 
-class Trabajador {
+class Tecnico {
 
-    Login login
     String nombre
     String cedula
     String telefono
     String email
+    Integer idEstadoTecnico
     
-    static belongTo = [incidente:Incidente]
+    static belongsTo = [incidente:Incidente]
     
     static mapping = {
         table'trabajadores'
@@ -19,6 +19,7 @@ class Trabajador {
         nombre blank:false, nullable:false, maxSize:100
         cedula blank:false, nullable:false, maxSize:20
         telefono blank:false, nullable:false, maxSize:20
-        email blank:false, nullable:false, maxSize:30        
+        email blank:false, nullable:false, maxSize:30       
+        idEstadoTecnico nullable:true
     }
 }

@@ -5,9 +5,7 @@ class Empresa {
     String nombre
     String nit
     
-    static hasMany = [usuario:Usuario]
-    
-    static belongTo = [incidente:Incidente]
+    static hasMany = [cliente:Cliente]  
     
     static mapping = {
         table'empresas'

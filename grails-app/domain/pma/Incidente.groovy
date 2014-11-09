@@ -1,19 +1,19 @@
 package pma
 
 class Incidente {
-
-    Tipo tipo
-    Categoria categoria
-    Estado estado
+    
     Date registro
-    Date solucion
-    Trabajador asignado
-    Empresa empresa
-    Usuario usuario
-    Prioridad prioridad
+    Date solucion    
     String descripUsuario
     String descripTecnica
-    String solucionDada
+    String solucionDada  
+    Integer idTipoIncidente
+    Integer idCategoriaIncidente
+    Integer idEstadoIncidente
+    Integer idPrioridadIncidente
+    
+    static hasOne = [tecnico:Tecnico, cliente:Cliente]
+   
 
     static mapping = {
         table'incidentes'
@@ -21,9 +21,13 @@ class Incidente {
     }
     
     static constraints = {       
-        descripUsuario blank:false, nullable:false, maxSize:250
-        descripTecnica blank:false, nullable:false, maxSize:150
-        solucionDada blank:false, nullable:false, maxSize:150            
+        descripUsuario blank:false, nullable:false, maxSize:500
+        descripTecnica blank:true, nullable:false, maxSize:500
+        solucionDada blank:true, nullable:false, maxSize:500 
+        idTipoIncidente blank:false, nullable:true
+        idCategoriaIncidente blank:false, nullable:true
+        idEstadoIncidente blank:false, nullable:true
+        idPrioridadIncidente blank:true, nullable:true
     }
 }
 
