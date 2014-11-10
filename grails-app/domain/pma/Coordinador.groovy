@@ -7,6 +7,8 @@ class Coordinador {
     String telefono
     String email
     Integer idEstadoCoordinador
+    
+    static hasOne = [usuario:Usuario]
           
     static mapping = {
         table'trabajadores'

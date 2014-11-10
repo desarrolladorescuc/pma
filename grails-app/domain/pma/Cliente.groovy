@@ -9,8 +9,12 @@ class Cliente {
     String cargo
     String area
     Integer idEstadoCliente
+    
+    static hasOne = [usuario:Usuario]
+    
+    static hasMany = [incidente:Incidente]
         
-    static belongsTo = [empresa:Empresa, incidente:Incidente]
+    static belongsTo = [empresa:Empresa]
     
     static mapping = {
         table'clientes'

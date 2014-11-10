@@ -74,12 +74,3 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'incidente', 'error')} required">
-	<label for="incidente">
-		<g:message code="cliente.incidente.label" default="Incidente" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="incidente" name="incidente.id" from="${pma.Incidente.list()}" optionKey="id" required="" value="${clienteInstance?.incidente?.id}" class="many-to-one"/>
-
-</div>
-

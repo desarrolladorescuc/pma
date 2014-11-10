@@ -8,7 +8,9 @@ class Tecnico {
     String email
     Integer idEstadoTecnico
     
-    static belongsTo = [incidente:Incidente]
+    static hasMany = [incidente:Incidente]
+    
+    static hasOne = [usuario:Usuario]
     
     static mapping = {
         table'trabajadores'

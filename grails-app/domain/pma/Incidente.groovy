@@ -12,7 +12,7 @@ class Incidente {
     Integer idEstadoIncidente
     Integer idPrioridadIncidente
     
-    static hasOne = [tecnico:Tecnico, cliente:Cliente]
+    static belongsTo = [tecnico:Tecnico, cliente:Cliente]
    
 
     static mapping = {

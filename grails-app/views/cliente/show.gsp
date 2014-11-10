@@ -95,15 +95,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.incidente}">
-				<li class="fieldcontain">
-					<span id="incidente-label" class="property-label"><g:message code="cliente.incidente.label" default="Incidente" /></span>
-					
-						<span class="property-value" aria-labelledby="incidente-label"><g:link controller="incidente" action="show" id="${clienteInstance?.incidente?.id}">${clienteInstance?.incidente?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form url="[resource:clienteInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
