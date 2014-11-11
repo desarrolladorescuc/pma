@@ -6,7 +6,7 @@ class Coordinador {
     String cedula
     String telefono
     String email
-    Integer idEstadoCoordinador
+    String estadoCoordinador
     
     static hasOne = [usuario:Usuario]
           
@@ -20,6 +20,10 @@ class Coordinador {
         cedula blank:false, nullable:false, maxSize:20
         telefono blank:false, nullable:false, maxSize:20
         email blank:false, nullable:false, maxSize:30  
-        idEstadoCoordinador nullable:true
+        estadoCoordinador inList:['Activo','Inactivo'] 
     }
+    
+    String  toString(){
+        return cedula        
+    } 
 }

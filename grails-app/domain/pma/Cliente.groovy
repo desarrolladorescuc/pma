@@ -8,7 +8,7 @@ class Cliente {
     String email
     String cargo
     String area
-    Integer idEstadoCliente
+    String estadoCliente
     
     static hasOne = [usuario:Usuario]
     
@@ -28,8 +28,9 @@ class Cliente {
         email blank:false, nullable:false, maxSize:30        
         cargo blank:false, nullable:false, maxSize:30        
         area blank:false, nullable:false, maxSize:100      
-        idEstadoCliente nullable:true
+        estadoCliente inList:['Activo','Inactivo'] 
     }
+    
     String  toString(){
         return cedula        
     } 

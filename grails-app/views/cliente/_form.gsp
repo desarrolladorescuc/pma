@@ -56,12 +56,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'idEstadoCliente', 'error')} ">
-	<label for="idEstadoCliente">
-		<g:message code="cliente.idEstadoCliente.label" default="Id Estado Cliente" />
-		
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'estadoCliente', 'error')} required">
+	<label for="estadoCliente">
+		<g:message code="cliente.estadoCliente.label" default="Estado Cliente" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="idEstadoCliente" type="number" value="${clienteInstance.idEstadoCliente}"/>
+	<g:select name="estadoCliente" from="${clienteInstance.constraints.estadoCliente.inList}" required="" value="${clienteInstance?.estadoCliente}" valueMessagePrefix="cliente.estadoCliente"/>
 
 </div>
 

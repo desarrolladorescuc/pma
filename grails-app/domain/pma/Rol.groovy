@@ -8,7 +8,7 @@ class Rol {
     
      static constraints = {
         rol  nullable:false,maxSize:100
-        estadoRol inList:['A','I'] 
+        estadoRol inList:['Activo','Inactivo'] 
     }
      static mapping ={
        table 'roles'

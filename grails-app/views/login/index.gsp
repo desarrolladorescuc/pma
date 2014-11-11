@@ -30,9 +30,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <div class="login-panel panel panel-default">
+                <div class="login-panel panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <center><h3 class="panel-title" >PMA - Mesa de ayuda Integral</h3></center>                        
+                        <center><h3 class="panel-title">Por favor, Inicie Sesion</h3></center> 
                     </div>
                     <div class="panel-body">
                         <g:if test="${flash.message}">
@@ -52,7 +53,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block" >Ingresar</button> 
+                                <button type="submit" class="btn btn-lg btn-info btn-block" >Ingresar</button> 
                             </fieldset>
                         </form>
                     </div>

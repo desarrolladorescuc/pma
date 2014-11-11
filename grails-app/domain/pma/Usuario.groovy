@@ -6,7 +6,7 @@ class Usuario {
     String password
     String estadoUsuario
     
-    static belongsTo =[cliente:Cliente, tecnico:Tecnico, coordinador:Coordinador]
+    static belongsTo =[cliente:Cliente, tecnico:Tecnico, coordinador:Coordinador,empresa:Empresa]
     static hasOne=[rol:Rol]
     
     static mapping ={
@@ -17,7 +17,7 @@ class Usuario {
     static constraints = {
         login nullable:false,unique:true
         password  nullable:false,password:true
-        estadoUsuario inList:['A','I'] 
+        estadoUsuario inList:['Activo','Inactivo'] 
     }
     String  toString(){
         return login        

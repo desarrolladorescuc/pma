@@ -77,11 +77,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.idEstadoCliente}">
+				<g:if test="${clienteInstance?.estadoCliente}">
 				<li class="fieldcontain">
-					<span id="idEstadoCliente-label" class="property-label"><g:message code="cliente.idEstadoCliente.label" default="Id Estado Cliente" /></span>
+					<span id="estadoCliente-label" class="property-label"><g:message code="cliente.estadoCliente.label" default="Estado Cliente" /></span>
 					
-						<span class="property-value" aria-labelledby="idEstadoCliente-label"><g:fieldValue bean="${clienteInstance}" field="idEstadoCliente"/></span>
+						<span class="property-value" aria-labelledby="estadoCliente-label"><g:fieldValue bean="${clienteInstance}" field="estadoCliente"/></span>
 					
 				</li>
 				</g:if>
