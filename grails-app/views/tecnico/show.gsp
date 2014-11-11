@@ -68,6 +68,26 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${tecnicoInstance?.incidente}">
+				<li class="fieldcontain">
+					<span id="incidente-label" class="property-label"><g:message code="tecnico.incidente.label" default="Incidente" /></span>
+					
+						<g:each in="${tecnicoInstance.incidente}" var="i">
+						<span class="property-value" aria-labelledby="incidente-label"><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${tecnicoInstance?.usuario}">
+				<li class="fieldcontain">
+					<span id="usuario-label" class="property-label"><g:message code="tecnico.usuario.label" default="Usuario" /></span>
+					
+						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${tecnicoInstance?.usuario?.id}">${tecnicoInstance?.usuario?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:tecnicoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

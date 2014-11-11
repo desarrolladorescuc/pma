@@ -34,6 +34,8 @@
 					
 						<g:sortableColumn property="idEstadoCoordinador" title="${message(code: 'coordinador.idEstadoCoordinador.label', default: 'Id Estado Coordinador')}" />
 					
+						<th><g:message code="coordinador.usuario.label" default="Usuario" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -49,6 +51,8 @@
 						<td>${fieldValue(bean: coordinadorInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: coordinadorInstance, field: "idEstadoCoordinador")}</td>
+					
+						<td>${fieldValue(bean: coordinadorInstance, field: "usuario")}</td>
 					
 					</tr>
 				</g:each>

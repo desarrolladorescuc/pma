@@ -74,3 +74,30 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'incidente', 'error')} ">
+	<label for="incidente">
+		<g:message code="cliente.incidente.label" default="Incidente" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${clienteInstance?.incidente?}" var="i">
+    <li><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="incidente" action="create" params="['cliente.id': clienteInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'incidente.label', default: 'Incidente')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="cliente.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" required="" value="${clienteInstance?.usuario?.id}" class="many-to-one"/>
+
+</div>
+

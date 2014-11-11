@@ -95,6 +95,26 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${clienteInstance?.incidente}">
+				<li class="fieldcontain">
+					<span id="incidente-label" class="property-label"><g:message code="cliente.incidente.label" default="Incidente" /></span>
+					
+						<g:each in="${clienteInstance.incidente}" var="i">
+						<span class="property-value" aria-labelledby="incidente-label"><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clienteInstance?.usuario}">
+				<li class="fieldcontain">
+					<span id="usuario-label" class="property-label"><g:message code="cliente.usuario.label" default="Usuario" /></span>
+					
+						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${clienteInstance?.usuario?.id}">${clienteInstance?.usuario?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:clienteInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

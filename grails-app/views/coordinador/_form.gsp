@@ -47,3 +47,12 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: coordinadorInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="coordinador.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" required="" value="${coordinadorInstance?.usuario?.id}" class="many-to-one"/>
+
+</div>
+

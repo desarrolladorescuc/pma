@@ -13,6 +13,7 @@ class Operacion {
     static constraints = {
         operacion nullable:false,maxSize:300
         estadoOperacion inList:['A','I'] 
+        opcion nullable:true
     }
    def String toString(){
        return operacion        

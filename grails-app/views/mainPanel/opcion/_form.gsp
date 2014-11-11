@@ -1,4 +1,4 @@
-<%@ page import="pma.Opcion" %>
+<%@ page import="crmcuc.Opcion" %>
 
 
 
@@ -8,6 +8,33 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="opcion" maxlength="100" required="" value="${opcionInstance?.opcion}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: opcionInstance, field: 'idPadre', 'error')} ">
+	<label for="idPadre">
+		<g:message code="opcion.idPadre.label" default="Id Padre" />
+		
+	</label>
+	<g:field name="idPadre" type="number" value="${opcionInstance.idPadre}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: opcionInstance, field: 'tipoOpcion', 'error')} required">
+	<label for="tipoOpcion">
+		<g:message code="opcion.tipoOpcion.label" default="Tipo Opcion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="tipoOpcion" from="${opcionInstance.constraints.tipoOpcion.inList}" required="" value="${opcionInstance?.tipoOpcion}" valueMessagePrefix="opcion.tipoOpcion"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: opcionInstance, field: 'orden', 'error')} ">
+	<label for="orden">
+		<g:message code="opcion.orden.label" default="Orden" />
+		
+	</label>
+	<g:textField name="orden" maxlength="3" value="${opcionInstance?.orden}"/>
 
 </div>
 
@@ -70,7 +97,7 @@
 		<g:message code="opcion.rol.label" default="Rol" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="rol" name="rol.id" from="${pma.Rol.list()}" optionKey="id" required="" value="${opcionInstance?.rol?.id}" class="many-to-one"/>
+	<g:select id="rol" name="rol.id" from="${crmcuc.Rol.list()}" optionKey="id" required="" value="${opcionInstance?.rol?.id}" class="many-to-one"/>
 
 </div>
 

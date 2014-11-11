@@ -34,6 +34,8 @@
 					
 						<g:sortableColumn property="idEstadoTecnico" title="${message(code: 'tecnico.idEstadoTecnico.label', default: 'Id Estado Tecnico')}" />
 					
+						<th><g:message code="tecnico.usuario.label" default="Usuario" /></th>
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -49,6 +51,8 @@
 						<td>${fieldValue(bean: tecnicoInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: tecnicoInstance, field: "idEstadoTecnico")}</td>
+					
+						<td>${fieldValue(bean: tecnicoInstance, field: "usuario")}</td>
 					
 					</tr>
 				</g:each>

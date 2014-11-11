@@ -68,6 +68,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${coordinadorInstance?.usuario}">
+				<li class="fieldcontain">
+					<span id="usuario-label" class="property-label"><g:message code="coordinador.usuario.label" default="Usuario" /></span>
+					
+						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${coordinadorInstance?.usuario?.id}">${coordinadorInstance?.usuario?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:coordinadorInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

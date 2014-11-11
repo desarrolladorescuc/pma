@@ -47,3 +47,30 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: tecnicoInstance, field: 'incidente', 'error')} ">
+	<label for="incidente">
+		<g:message code="tecnico.incidente.label" default="Incidente" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${tecnicoInstance?.incidente?}" var="i">
+    <li><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="incidente" action="create" params="['tecnico.id': tecnicoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'incidente.label', default: 'Incidente')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: tecnicoInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="tecnico.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" required="" value="${tecnicoInstance?.usuario?.id}" class="many-to-one"/>
+
+</div>
+

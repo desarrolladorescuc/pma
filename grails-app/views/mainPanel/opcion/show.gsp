@@ -1,5 +1,5 @@
 
-<%@ page import="pma.Opcion" %>
+<%@ page import="crmcuc.Opcion" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -28,6 +28,33 @@
 					<span id="opcion-label" class="property-label"><g:message code="opcion.opcion.label" default="Opcion" /></span>
 					
 						<span class="property-value" aria-labelledby="opcion-label"><g:fieldValue bean="${opcionInstance}" field="opcion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${opcionInstance?.idPadre}">
+				<li class="fieldcontain">
+					<span id="idPadre-label" class="property-label"><g:message code="opcion.idPadre.label" default="Id Padre" /></span>
+					
+						<span class="property-value" aria-labelledby="idPadre-label"><g:fieldValue bean="${opcionInstance}" field="idPadre"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${opcionInstance?.tipoOpcion}">
+				<li class="fieldcontain">
+					<span id="tipoOpcion-label" class="property-label"><g:message code="opcion.tipoOpcion.label" default="Tipo Opcion" /></span>
+					
+						<span class="property-value" aria-labelledby="tipoOpcion-label"><g:fieldValue bean="${opcionInstance}" field="tipoOpcion"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${opcionInstance?.orden}">
+				<li class="fieldcontain">
+					<span id="orden-label" class="property-label"><g:message code="opcion.orden.label" default="Orden" /></span>
+					
+						<span class="property-value" aria-labelledby="orden-label"><g:fieldValue bean="${opcionInstance}" field="orden"/></span>
 					
 				</li>
 				</g:if>
