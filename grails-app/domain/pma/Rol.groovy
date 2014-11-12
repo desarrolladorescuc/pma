@@ -8,6 +8,7 @@ class Rol {
     
      static constraints = {
         rol  nullable:false,maxSize:100
+        estadoRol maxSize:10
         estadoRol inList:['Activo','Inactivo'] 
     }
      static mapping ={
