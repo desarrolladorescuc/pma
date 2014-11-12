@@ -39,7 +39,7 @@
                         <g:if test="${flash.message}">
                             <div class="alert alert-danger alert-dismissable" role="status">${flash.message}</div>
 			</g:if>
-                        <form role="form"  action="/crmcuc/login/autenticacion" method="post" >
+                        <form role="form"  action="/pma/login/autenticacion" method="post" >
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Usuario" name="login"  autofocus>

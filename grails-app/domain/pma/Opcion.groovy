@@ -21,7 +21,7 @@ class Opcion {
         controlador   nullable: true, maxSize: 200
         claseCss      nullable: true, maxSize: 100
         url           nullable: true, maxSize: 300
-        estadoOpcion inList:['A','I'] 
+        estadoOpcion inList:['Activo','Inactivo'] 
     }
    def String toString(){
        return opcion        

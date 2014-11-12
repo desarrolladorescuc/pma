@@ -14,6 +14,6 @@ String estadoParametro
     static constraints = {
        atributo     nullable:true, maxSize:50
        descripcion   nullable:true, maxSize:150
-       estadoParametro nullable:true, maxSize:1
+       estadoParametro inList:['Activo','Inactivo'] 
     }
 }

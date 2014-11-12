@@ -1,16 +1,24 @@
 package pma
+
 import org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequest
+
 class LoginController {
-   def index() {
-      if (session["id_session"]) {
-            redirect(controller:"mainPanel",action:"index")
+    
+    def control = "mainPanel"
+    def accion = "index"
+    
+    def index() {
+        if (session["id_session"]) {
+            redirect(controller:control,action:accion)
             return false 
         }
-   }
-   def acceso(){
-       render view: "acceso"
-   }
-     def autenticacion() {  
+    }
+    
+    def acceso(){
+        render view: "acceso"
+    }
+    
+    def autenticacion() {  
         
         def clave = params.password + ""
         clave = clave.encodeAsMD5()
@@ -20,7 +28,7 @@ class LoginController {
         def query = Usuario.where {
             login == params.login.toString()
             password == clave            
-            estadoUsuario == "A"
+            estadoUsuario == "Activo"
         }
         Usuario user = query.find()
         

@@ -7,9 +7,9 @@ class Incidente {
     String descripUsuario
     String descripTecnica
     String solucionDada  
+    String estadoIncidente
     Integer idTipoIncidente
-    Integer idCategoriaIncidente
-    Integer idEstadoIncidente
+    Integer idCategoriaIncidente    
     Integer idPrioridadIncidente
     
     static belongsTo = [tecnico:Tecnico, cliente:Cliente]
@@ -26,7 +26,7 @@ class Incidente {
         solucionDada blank:true, nullable:false, maxSize:500 
         idTipoIncidente blank:false, nullable:true
         idCategoriaIncidente blank:false, nullable:true
-        idEstadoIncidente blank:false, nullable:true
+        estadoIncidente inList:['Activo','Inactivo'] 
         idPrioridadIncidente blank:true, nullable:true
     }
 }

@@ -14,6 +14,6 @@ class ValorParametro {
     static constraints = {        
         valor                 nullable:true, maxSize:300
         descripcion           nullable:true, maxSize:150
-        estadoValorParametro  nullable:true, maxSize:1
+        estadoValorParametro  inList:['Activo','Inactivo'] 
     }
 }

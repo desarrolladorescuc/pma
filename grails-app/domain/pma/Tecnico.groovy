@@ -6,7 +6,7 @@ class Tecnico {
     String cedula
     String telefono
     String email
-    Integer idEstadoTecnico
+    String estadoTecnico
     
     static hasMany = [incidente:Incidente]
     
@@ -22,6 +22,6 @@ class Tecnico {
         cedula blank:false, nullable:false, maxSize:20
         telefono blank:false, nullable:false, maxSize:20
         email blank:false, nullable:false, maxSize:30       
-        idEstadoTecnico nullable:true
+        estadoTecnico inList:['Activo','Inactivo'] 
     }
 }

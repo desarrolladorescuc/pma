@@ -12,7 +12,7 @@ class Operacion {
      }
     static constraints = {
         operacion nullable:false,maxSize:300
-        estadoOperacion inList:['A','I'] 
+        estadoOperacion inList:['Activo','Inactivo'] 
         opcion nullable:true
     }
    def String toString(){

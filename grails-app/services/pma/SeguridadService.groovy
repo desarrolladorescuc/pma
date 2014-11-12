@@ -25,8 +25,7 @@ class SeguridadService {
         def  vec=uri.split("/")  
         println "vec=${vec}"
         def controlador=vec[1].toString()
-        def accion=vec[2].toString()
-    
+        def accion=vec[2].toString()    
         println "controlador=${controlador}"
         print "accion=${accion}"
         def query=""" SELECT  u.login,o.rol.id,p.operacion  
@@ -41,6 +40,13 @@ class SeguridadService {
         def ctrl =Opcion.executeQuery(query)
         println "ctrl=${ctrl}"
         if(ctrl.size()>0) return true else return false  
+    }
+    
+    def getUsuarioDelUsuario (String login) {
+        Usuario usuario = Usuario.findByLogin(login)
+        def dueño = usuario.belongsTo
+        println "Dueño=${dueño}"
+        return dueño
     }
     
     def getMenu(iduser){
