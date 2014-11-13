@@ -2,21 +2,30 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'nombre', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
 		<g:message code="empresa.nombre.label" default="Nombre" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nombre" value="${empresaInstance?.nombre}"/>
+	<g:textField name="nombre" required="" value="${empresaInstance?.nombre}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'nit', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'nit', 'error')} required">
 	<label for="nit">
 		<g:message code="empresa.nit.label" default="Nit" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="nit" value="${empresaInstance?.nit}"/>
+	<g:textField name="nit" required="" value="${empresaInstance?.nit}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'estadoEmpresa', 'error')} required">
+	<label for="estadoEmpresa">
+		<g:message code="empresa.estadoEmpresa.label" default="Estado Empresa" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="estadoEmpresa" from="${empresaInstance.constraints.estadoEmpresa.inList}" required="" value="${empresaInstance?.estadoEmpresa}" valueMessagePrefix="empresa.estadoEmpresa"/>
 
 </div>
 

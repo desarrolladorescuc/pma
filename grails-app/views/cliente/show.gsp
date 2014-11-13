@@ -41,20 +41,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.telefono}">
-				<li class="fieldcontain">
-					<span id="telefono-label" class="property-label"><g:message code="cliente.telefono.label" default="Telefono" /></span>
-					
-						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${clienteInstance}" field="telefono"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${clienteInstance?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="cliente.email.label" default="Email" /></span>
 					
 						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${clienteInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clienteInstance?.celular}">
+				<li class="fieldcontain">
+					<span id="celular-label" class="property-label"><g:message code="cliente.celular.label" default="Celular" /></span>
+					
+						<span class="property-value" aria-labelledby="celular-label"><g:fieldValue bean="${clienteInstance}" field="celular"/></span>
 					
 				</li>
 				</g:if>
@@ -86,6 +86,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${clienteInstance?.usuario}">
+				<li class="fieldcontain">
+					<span id="usuario-label" class="property-label"><g:message code="cliente.usuario.label" default="Usuario" /></span>
+					
+						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${clienteInstance?.usuario?.id}">${clienteInstance?.usuario?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${clienteInstance?.empresa}">
 				<li class="fieldcontain">
 					<span id="empresa-label" class="property-label"><g:message code="cliente.empresa.label" default="Empresa" /></span>
@@ -102,15 +111,6 @@
 						<g:each in="${clienteInstance.incidente}" var="i">
 						<span class="property-value" aria-labelledby="incidente-label"><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
 						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${clienteInstance?.usuario}">
-				<li class="fieldcontain">
-					<span id="usuario-label" class="property-label"><g:message code="cliente.usuario.label" default="Usuario" /></span>
-					
-						<span class="property-value" aria-labelledby="usuario-label"><g:link controller="usuario" action="show" id="${clienteInstance?.usuario?.id}">${clienteInstance?.usuario?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

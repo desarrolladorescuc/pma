@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="registro" title="${message(code: 'incidente.registro.label', default: 'Registro')}" />
+					
 						<g:sortableColumn property="descripUsuario" title="${message(code: 'incidente.descripUsuario.label', default: 'Descrip Usuario')}" />
-					
-						<g:sortableColumn property="descripTecnica" title="${message(code: 'incidente.descripTecnica.label', default: 'Descrip Tecnica')}" />
-					
-						<g:sortableColumn property="solucionDada" title="${message(code: 'incidente.solucionDada.label', default: 'Solucion Dada')}" />
 					
 						<g:sortableColumn property="idTipoIncidente" title="${message(code: 'incidente.idTipoIncidente.label', default: 'Id Tipo Incidente')}" />
 					
 						<g:sortableColumn property="idCategoriaIncidente" title="${message(code: 'incidente.idCategoriaIncidente.label', default: 'Id Categoria Incidente')}" />
 					
-						<g:sortableColumn property="idEstadoIncidente" title="${message(code: 'incidente.idEstadoIncidente.label', default: 'Id Estado Incidente')}" />
+						<g:sortableColumn property="estadoIncidente" title="${message(code: 'incidente.estadoIncidente.label', default: 'Estado Incidente')}" />
+					
+						<g:sortableColumn property="idPrioridadIncidente" title="${message(code: 'incidente.idPrioridadIncidente.label', default: 'Id Prioridad Incidente')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${incidenteInstanceList}" status="i" var="incidenteInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${incidenteInstance.id}">${fieldValue(bean: incidenteInstance, field: "descripUsuario")}</g:link></td>
+						<td><g:link action="show" id="${incidenteInstance.id}">${fieldValue(bean: incidenteInstance, field: "registro")}</g:link></td>
 					
-						<td>${fieldValue(bean: incidenteInstance, field: "descripTecnica")}</td>
-					
-						<td>${fieldValue(bean: incidenteInstance, field: "solucionDada")}</td>
+						<td>${fieldValue(bean: incidenteInstance, field: "descripUsuario")}</td>
 					
 						<td>${fieldValue(bean: incidenteInstance, field: "idTipoIncidente")}</td>
 					
 						<td>${fieldValue(bean: incidenteInstance, field: "idCategoriaIncidente")}</td>
 					
-						<td>${fieldValue(bean: incidenteInstance, field: "idEstadoIncidente")}</td>
+						<td>${fieldValue(bean: incidenteInstance, field: "estadoIncidente")}</td>
+					
+						<td>${fieldValue(bean: incidenteInstance, field: "idPrioridadIncidente")}</td>
 					
 					</tr>
 				</g:each>

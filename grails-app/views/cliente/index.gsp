@@ -28,9 +28,9 @@
 					
 						<g:sortableColumn property="cedula" title="${message(code: 'cliente.cedula.label', default: 'Cedula')}" />
 					
-						<g:sortableColumn property="telefono" title="${message(code: 'cliente.telefono.label', default: 'Telefono')}" />
-					
 						<g:sortableColumn property="email" title="${message(code: 'cliente.email.label', default: 'Email')}" />
+					
+						<g:sortableColumn property="celular" title="${message(code: 'cliente.celular.label', default: 'Celular')}" />
 					
 						<g:sortableColumn property="cargo" title="${message(code: 'cliente.cargo.label', default: 'Cargo')}" />
 					
@@ -46,9 +46,9 @@
 					
 						<td>${fieldValue(bean: clienteInstance, field: "cedula")}</td>
 					
-						<td>${fieldValue(bean: clienteInstance, field: "telefono")}</td>
-					
 						<td>${fieldValue(bean: clienteInstance, field: "email")}</td>
+					
+						<td>${fieldValue(bean: clienteInstance, field: "celular")}</td>
 					
 						<td>${fieldValue(bean: clienteInstance, field: "cargo")}</td>
 					

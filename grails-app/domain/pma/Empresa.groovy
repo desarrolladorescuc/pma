@@ -6,9 +6,7 @@ class Empresa {
     String nit
     String estadoEmpresa
     
-    static hasMany = [cliente:Cliente]  
-    
-    static hasOne = [usuario:Usuario]
+    static hasMany = [cliente:Cliente] 
     
     static mapping = {
         table'empresas'
@@ -16,8 +14,8 @@ class Empresa {
     }
     
     static constraints = {
-        nombre blank:false, nullable:true, maxSise:50
-        nit blank:false, nullable:true, maxSise:20
+        nombre  nullable:false, maxSise:50
+        nit     nullable:false, maxSise:20
         estadoEmpresa inList:['Activo','Inactivo'] 
     }
     

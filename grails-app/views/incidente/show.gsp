@@ -23,29 +23,20 @@
 			</g:if>
 			<ol class="property-list incidente">
 			
+				<g:if test="${incidenteInstance?.registro}">
+				<li class="fieldcontain">
+					<span id="registro-label" class="property-label"><g:message code="incidente.registro.label" default="Registro" /></span>
+					
+						<span class="property-value" aria-labelledby="registro-label"><g:formatDate date="${incidenteInstance?.registro}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${incidenteInstance?.descripUsuario}">
 				<li class="fieldcontain">
 					<span id="descripUsuario-label" class="property-label"><g:message code="incidente.descripUsuario.label" default="Descrip Usuario" /></span>
 					
 						<span class="property-value" aria-labelledby="descripUsuario-label"><g:fieldValue bean="${incidenteInstance}" field="descripUsuario"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${incidenteInstance?.descripTecnica}">
-				<li class="fieldcontain">
-					<span id="descripTecnica-label" class="property-label"><g:message code="incidente.descripTecnica.label" default="Descrip Tecnica" /></span>
-					
-						<span class="property-value" aria-labelledby="descripTecnica-label"><g:fieldValue bean="${incidenteInstance}" field="descripTecnica"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${incidenteInstance?.solucionDada}">
-				<li class="fieldcontain">
-					<span id="solucionDada-label" class="property-label"><g:message code="incidente.solucionDada.label" default="Solucion Dada" /></span>
-					
-						<span class="property-value" aria-labelledby="solucionDada-label"><g:fieldValue bean="${incidenteInstance}" field="solucionDada"/></span>
 					
 				</li>
 				</g:if>
@@ -68,11 +59,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${incidenteInstance?.idEstadoIncidente}">
+				<g:if test="${incidenteInstance?.estadoIncidente}">
 				<li class="fieldcontain">
-					<span id="idEstadoIncidente-label" class="property-label"><g:message code="incidente.idEstadoIncidente.label" default="Id Estado Incidente" /></span>
+					<span id="estadoIncidente-label" class="property-label"><g:message code="incidente.estadoIncidente.label" default="Estado Incidente" /></span>
 					
-						<span class="property-value" aria-labelledby="idEstadoIncidente-label"><g:fieldValue bean="${incidenteInstance}" field="idEstadoIncidente"/></span>
+						<span class="property-value" aria-labelledby="estadoIncidente-label"><g:fieldValue bean="${incidenteInstance}" field="estadoIncidente"/></span>
 					
 				</li>
 				</g:if>
@@ -86,20 +77,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${incidenteInstance?.cliente}">
+				<g:if test="${incidenteInstance?.descripTecnica}">
 				<li class="fieldcontain">
-					<span id="cliente-label" class="property-label"><g:message code="incidente.cliente.label" default="Cliente" /></span>
+					<span id="descripTecnica-label" class="property-label"><g:message code="incidente.descripTecnica.label" default="Descrip Tecnica" /></span>
 					
-						<span class="property-value" aria-labelledby="cliente-label"><g:link controller="cliente" action="show" id="${incidenteInstance?.cliente?.id}">${incidenteInstance?.cliente?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="descripTecnica-label"><g:fieldValue bean="${incidenteInstance}" field="descripTecnica"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${incidenteInstance?.registro}">
+				<g:if test="${incidenteInstance?.solucionDada}">
 				<li class="fieldcontain">
-					<span id="registro-label" class="property-label"><g:message code="incidente.registro.label" default="Registro" /></span>
+					<span id="solucionDada-label" class="property-label"><g:message code="incidente.solucionDada.label" default="Solucion Dada" /></span>
 					
-						<span class="property-value" aria-labelledby="registro-label"><g:formatDate date="${incidenteInstance?.registro}" /></span>
+						<span class="property-value" aria-labelledby="solucionDada-label"><g:fieldValue bean="${incidenteInstance}" field="solucionDada"/></span>
 					
 				</li>
 				</g:if>
@@ -113,11 +104,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${incidenteInstance?.tecnico}">
+				<g:if test="${incidenteInstance?.cliente}">
 				<li class="fieldcontain">
-					<span id="tecnico-label" class="property-label"><g:message code="incidente.tecnico.label" default="Tecnico" /></span>
+					<span id="cliente-label" class="property-label"><g:message code="incidente.cliente.label" default="Cliente" /></span>
 					
-						<span class="property-value" aria-labelledby="tecnico-label"><g:link controller="tecnico" action="show" id="${incidenteInstance?.tecnico?.id}">${incidenteInstance?.tecnico?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="cliente-label"><g:link controller="cliente" action="show" id="${incidenteInstance?.cliente?.id}">${incidenteInstance?.cliente?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${incidenteInstance?.empleado}">
+				<li class="fieldcontain">
+					<span id="empleado-label" class="property-label"><g:message code="incidente.empleado.label" default="Empleado" /></span>
+					
+						<span class="property-value" aria-labelledby="empleado-label"><g:link controller="empleado" action="show" id="${incidenteInstance?.empleado?.id}">${incidenteInstance?.empleado?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

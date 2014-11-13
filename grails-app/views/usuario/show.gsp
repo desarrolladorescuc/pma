@@ -50,38 +50,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${usuarioInstance?.cliente}">
-				<li class="fieldcontain">
-					<span id="cliente-label" class="property-label"><g:message code="usuario.cliente.label" default="Cliente" /></span>
-					
-						<span class="property-value" aria-labelledby="cliente-label"><g:link controller="cliente" action="show" id="${usuarioInstance?.cliente?.id}">${usuarioInstance?.cliente?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${usuarioInstance?.coordinador}">
-				<li class="fieldcontain">
-					<span id="coordinador-label" class="property-label"><g:message code="usuario.coordinador.label" default="Coordinador" /></span>
-					
-						<span class="property-value" aria-labelledby="coordinador-label"><g:link controller="coordinador" action="show" id="${usuarioInstance?.coordinador?.id}">${usuarioInstance?.coordinador?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${usuarioInstance?.rol}">
 				<li class="fieldcontain">
 					<span id="rol-label" class="property-label"><g:message code="usuario.rol.label" default="Rol" /></span>
 					
 						<span class="property-value" aria-labelledby="rol-label"><g:link controller="rol" action="show" id="${usuarioInstance?.rol?.id}">${usuarioInstance?.rol?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${usuarioInstance?.tecnico}">
-				<li class="fieldcontain">
-					<span id="tecnico-label" class="property-label"><g:message code="usuario.tecnico.label" default="Tecnico" /></span>
-					
-						<span class="property-value" aria-labelledby="tecnico-label"><g:link controller="tecnico" action="show" id="${usuarioInstance?.tecnico?.id}">${usuarioInstance?.tecnico?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -30,10 +30,6 @@
 					
 						<g:sortableColumn property="estadoUsuario" title="${message(code: 'usuario.estadoUsuario.label', default: 'Estado Usuario')}" />
 					
-						<th><g:message code="usuario.cliente.label" default="Cliente" /></th>
-					
-						<th><g:message code="usuario.coordinador.label" default="Coordinador" /></th>
-					
 						<th><g:message code="usuario.rol.label" default="Rol" /></th>
 					
 					</tr>
@@ -47,10 +43,6 @@
 						<td>${fieldValue(bean: usuarioInstance, field: "password")}</td>
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "estadoUsuario")}</td>
-					
-						<td>${fieldValue(bean: usuarioInstance, field: "cliente")}</td>
-					
-						<td>${fieldValue(bean: usuarioInstance, field: "coordinador")}</td>
 					
 						<td>${fieldValue(bean: usuarioInstance, field: "rol")}</td>
 					

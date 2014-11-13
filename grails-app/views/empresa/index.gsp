@@ -28,6 +28,8 @@
 					
 						<g:sortableColumn property="nit" title="${message(code: 'empresa.nit.label', default: 'Nit')}" />
 					
+						<g:sortableColumn property="estadoEmpresa" title="${message(code: 'empresa.estadoEmpresa.label', default: 'Estado Empresa')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -37,6 +39,8 @@
 						<td><g:link action="show" id="${empresaInstance.id}">${fieldValue(bean: empresaInstance, field: "nombre")}</g:link></td>
 					
 						<td>${fieldValue(bean: empresaInstance, field: "nit")}</td>
+					
+						<td>${fieldValue(bean: empresaInstance, field: "estadoEmpresa")}</td>
 					
 					</tr>
 				</g:each>

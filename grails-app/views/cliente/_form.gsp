@@ -20,39 +20,39 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'telefono', 'error')} required">
-	<label for="telefono">
-		<g:message code="cliente.telefono.label" default="Telefono" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="telefono" maxlength="20" required="" value="${clienteInstance?.telefono}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'email', 'error')} required">
 	<label for="email">
 		<g:message code="cliente.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="email" maxlength="30" required="" value="${clienteInstance?.email}"/>
+	<g:textField name="email" maxlength="120" required="" value="${clienteInstance?.email}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'cargo', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'celular', 'error')} ">
+	<label for="celular">
+		<g:message code="cliente.celular.label" default="Celular" />
+		
+	</label>
+	<g:textField name="celular" maxlength="20" value="${clienteInstance?.celular}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'cargo', 'error')} ">
 	<label for="cargo">
 		<g:message code="cliente.cargo.label" default="Cargo" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="cargo" maxlength="30" required="" value="${clienteInstance?.cargo}"/>
+	<g:textField name="cargo" maxlength="20" value="${clienteInstance?.cargo}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'area', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'area', 'error')} ">
 	<label for="area">
 		<g:message code="cliente.area.label" default="Area" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="area" maxlength="100" required="" value="${clienteInstance?.area}"/>
+	<g:textField name="area" maxlength="20" value="${clienteInstance?.area}"/>
 
 </div>
 
@@ -62,6 +62,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select name="estadoCliente" from="${clienteInstance.constraints.estadoCliente.inList}" required="" value="${clienteInstance?.estadoCliente}" valueMessagePrefix="cliente.estadoCliente"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuario', 'error')} ">
+	<label for="usuario">
+		<g:message code="cliente.usuario.label" default="Usuario" />
+		
+	</label>
+	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" value="${clienteInstance?.usuario?.id}" class="many-to-one" noSelection="['null': '']"/>
 
 </div>
 
@@ -89,15 +98,6 @@
 </li>
 </ul>
 
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'usuario', 'error')} required">
-	<label for="usuario">
-		<g:message code="cliente.usuario.label" default="Usuario" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" required="" value="${clienteInstance?.usuario?.id}" class="many-to-one"/>
 
 </div>
 

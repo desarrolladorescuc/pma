@@ -12,7 +12,7 @@ class Incidente {
     Integer idCategoriaIncidente    
     Integer idPrioridadIncidente
     
-    static belongsTo = [tecnico:Tecnico, cliente:Cliente]
+    static belongsTo = [empleado:Empleado, cliente:Cliente]
    
 
     static mapping = {
@@ -20,14 +20,16 @@ class Incidente {
         version false
     }
     
-    static constraints = {       
-        descripUsuario blank:false, nullable:false, maxSize:500
-        descripTecnica blank:true, nullable:false, maxSize:500
-        solucionDada blank:true, nullable:false, maxSize:500 
-        idTipoIncidente blank:false, nullable:true
-        idCategoriaIncidente blank:false, nullable:true
-        estadoIncidente inList:['Activo','Inactivo'] 
-        idPrioridadIncidente blank:true, nullable:true
+    static constraints = {    
+        registro            nullable:false 
+        descripUsuario      nullable:false, maxSize:500  
+        idTipoIncidente     nullable:false
+        idCategoriaIncidente nullable:false
+        estadoIncidente     inList:['Activo','Inactivo'], nullable:false
+        idPrioridadIncidente nullable:false      
+        descripTecnica      nullable:true, maxSize:500
+        solucionDada        nullable:true, maxSize:500 
+        solucion            nullable:true
     }
 }
 
