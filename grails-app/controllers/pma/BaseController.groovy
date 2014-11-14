@@ -13,10 +13,8 @@ abstract class BaseController {
         def acceso=seguridadService.autorizacion(session['idUsuario'],actionUri)
             
         if(!acceso){
-            redirect controller:"login", action:"acceso" 
-            return false
-        }else {
-            render text: message(code: 'seguridad.accesoDenegado', default: "Acceso denegado!")
+            flash.message="Acceso Denegado"
+            redirect(controller:"Login",action:"acceso")
             return false
         }                
         def operaciones=seguridadService.getOperPorOpcion(session['idUsuario'],actionUri)
@@ -25,9 +23,6 @@ abstract class BaseController {
         }else{
             session["operaciones"] = []        
         } 
-    } 
-  
-    
-   
-    
+    }   
+       
 }

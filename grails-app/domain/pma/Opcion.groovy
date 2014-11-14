@@ -5,6 +5,7 @@ class Opcion {
     String url
     String claseCss
     String controlador
+    String tipoOpcion
 
     String estadoOpcion
     
@@ -22,6 +23,7 @@ class Opcion {
         claseCss      nullable: true, maxSize: 100
         url           nullable: true, maxSize: 300
         estadoOpcion inList:['Activo','Inactivo'] 
+        tipoOpcion inList:['M','D']
     }
    def String toString(){
        return opcion        

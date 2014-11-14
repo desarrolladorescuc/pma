@@ -68,6 +68,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${opcionInstance?.tipoOpcion}">
+				<li class="fieldcontain">
+					<span id="tipoOpcion-label" class="property-label"><g:message code="opcion.tipoOpcion.label" default="Tipo Opcion" /></span>
+					
+						<span class="property-value" aria-labelledby="tipoOpcion-label"><g:fieldValue bean="${opcionInstance}" field="tipoOpcion"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${opcionInstance?.operacion}">
 				<li class="fieldcontain">
 					<span id="operacion-label" class="property-label"><g:message code="opcion.operacion.label" default="Operacion" /></span>

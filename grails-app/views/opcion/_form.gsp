@@ -47,6 +47,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: opcionInstance, field: 'tipoOpcion', 'error')} required">
+	<label for="tipoOpcion">
+		<g:message code="opcion.tipoOpcion.label" default="Tipo Opcion" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="tipoOpcion" from="${opcionInstance.constraints.tipoOpcion.inList}" required="" value="${opcionInstance?.tipoOpcion}" valueMessagePrefix="opcion.tipoOpcion"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: opcionInstance, field: 'operacion', 'error')} ">
 	<label for="operacion">
 		<g:message code="opcion.operacion.label" default="Operacion" />

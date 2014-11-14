@@ -3,13 +3,9 @@ package pma
 import org.codehaus.groovy.grails.web.servlet.mvc.GrailsWebRequest
 
 class LoginController {
-    
-    def control = "mainPanel"
-    def accion = "index"
-    
     def index() {
         if (session["id_session"]) {
-            redirect(controller:control,action:accion)
+            redirect url:"/"
             return false 
         }
     }
@@ -37,7 +33,7 @@ class LoginController {
             //session["nombre"]= generalService.getNombreEmpleado(user.id.toLong())
             session["idUsuario"]  = user.id
             session["id_session"]  = 123  
-            redirect  url: "/mainPanel/index"  
+            redirect  url: "/"  
             println "Entro =${user}"
         }else{
             //flash.message = message(code: 'default.login.userError')

@@ -34,7 +34,7 @@
 					
 						<g:sortableColumn property="estadoOpcion" title="${message(code: 'opcion.estadoOpcion.label', default: 'Estado Opcion')}" />
 					
-						<th><g:message code="opcion.rol.label" default="Rol" /></th>
+						<g:sortableColumn property="tipoOpcion" title="${message(code: 'opcion.tipoOpcion.label', default: 'Tipo Opcion')}" />
 					
 					</tr>
 				</thead>
@@ -52,7 +52,7 @@
 					
 						<td>${fieldValue(bean: opcionInstance, field: "estadoOpcion")}</td>
 					
-						<td>${fieldValue(bean: opcionInstance, field: "rol")}</td>
+						<td>${fieldValue(bean: opcionInstance, field: "tipoOpcion")}</td>
 					
 					</tr>
 				</g:each>
