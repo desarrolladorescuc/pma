@@ -13,7 +13,7 @@ class Cliente {
     
     //static hasOne = [usuario:Usuario]
     
-    static hasMany = [incidente:Incidente]
+    static hasMany = [incidentes:Incidente]
         
     static belongsTo = [empresa:Empresa]
     
@@ -27,10 +27,10 @@ class Cliente {
         cedula          blank:false, maxSize:20
         email           nullable:false,maxSize:120
         celular         nullable:true, maxSize:20        
-        cargo           nullable:true, maxSize:20        
+        cargo           nullable:true, maxSize:40        
         area            nullable:true, maxSize:20      
         estadoCliente   inList:['Activo','Inactivo'] 
-        usuario         nullable:true
+        usuario         nullable:true        
     }
     
     String  toString(){

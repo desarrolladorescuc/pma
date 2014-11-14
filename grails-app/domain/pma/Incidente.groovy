@@ -12,7 +12,7 @@ class Incidente {
     Integer idCategoriaIncidente    
     Integer idPrioridadIncidente
     
-    static belongsTo = [empleado:Empleado, cliente:Cliente]
+    static hasOne = [empleado:Empleado, cliente:Cliente]
    
 
     static mapping = {
@@ -22,12 +22,12 @@ class Incidente {
     
     static constraints = {    
         registro            nullable:false 
-        descripUsuario      nullable:false, maxSize:500  
+        descripUsuario      nullable:false, maxSize:2000  
         idTipoIncidente     nullable:false
         idCategoriaIncidente nullable:false
         estadoIncidente     inList:['Activo','Inactivo'], nullable:false
         idPrioridadIncidente nullable:false      
-        descripTecnica      nullable:true, maxSize:500
+        descripTecnica      nullable:true, maxSize:1000
         solucionDada        nullable:true, maxSize:500 
         solucion            nullable:true
     }

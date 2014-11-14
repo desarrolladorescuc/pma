@@ -9,7 +9,7 @@ class Empleado {
     String estadoEmpleado
     Usuario usuario
     
-    //static hasOne = [usuario:Usuario]
+    static hasMany = [incidentes:Incidente]
           
     static mapping = {
         table'empleados'

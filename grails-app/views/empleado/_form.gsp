@@ -20,21 +20,21 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'telefono', 'error')} required">
-	<label for="telefono">
-		<g:message code="empleado.telefono.label" default="Telefono" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="telefono" maxlength="20" required="" value="${empleadoInstance?.telefono}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'email', 'error')} required">
 	<label for="email">
 		<g:message code="empleado.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="email" maxlength="30" required="" value="${empleadoInstance?.email}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'celular', 'error')} ">
+	<label for="celular">
+		<g:message code="empleado.celular.label" default="Celular" />
+		
+	</label>
+	<g:textField name="celular" maxlength="20" value="${empleadoInstance?.celular}"/>
 
 </div>
 
@@ -47,12 +47,30 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'usuario', 'error')} ">
-	<label for="usuario">
-		<g:message code="empleado.usuario.label" default="Usuario" />
+<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'incidentes', 'error')} ">
+	<label for="incidentes">
+		<g:message code="empleado.incidentes.label" default="Incidentes" />
 		
 	</label>
-	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" value="${empleadoInstance?.usuario?.id}" class="many-to-one" noSelection="['null': '']"/>
+	
+<ul class="one-to-many">
+<g:each in="${empleadoInstance?.incidentes?}" var="i">
+    <li><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="incidente" action="create" params="['empleado.id': empleadoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'incidente.label', default: 'Incidente')])}</g:link>
+</li>
+</ul>
+
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: empleadoInstance, field: 'usuario', 'error')} required">
+	<label for="usuario">
+		<g:message code="empleado.usuario.label" default="Usuario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="usuario" name="usuario.id" from="${pma.Usuario.list()}" optionKey="id" required="" value="${empleadoInstance?.usuario?.id}" class="many-to-one"/>
 
 </div>
 

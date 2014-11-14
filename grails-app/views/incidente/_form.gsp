@@ -16,7 +16,7 @@
 		<g:message code="incidente.descripUsuario.label" default="Descrip Usuario" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="descripUsuario" cols="40" rows="5" maxlength="500" required="" value="${incidenteInstance?.descripUsuario}"/>
+	<g:textArea name="descripUsuario" cols="40" rows="5" maxlength="2000" required="" value="${incidenteInstance?.descripUsuario}"/>
 
 </div>
 
@@ -61,7 +61,7 @@
 		<g:message code="incidente.descripTecnica.label" default="Descrip Tecnica" />
 		
 	</label>
-	<g:textArea name="descripTecnica" cols="40" rows="5" maxlength="500" value="${incidenteInstance?.descripTecnica}"/>
+	<g:textArea name="descripTecnica" cols="40" rows="5" maxlength="1000" value="${incidenteInstance?.descripTecnica}"/>
 
 </div>
 

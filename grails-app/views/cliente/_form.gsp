@@ -43,7 +43,7 @@
 		<g:message code="cliente.cargo.label" default="Cargo" />
 		
 	</label>
-	<g:textField name="cargo" maxlength="20" value="${clienteInstance?.cargo}"/>
+	<g:textField name="cargo" maxlength="40" value="${clienteInstance?.cargo}"/>
 
 </div>
 
@@ -83,14 +83,14 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'incidente', 'error')} ">
-	<label for="incidente">
-		<g:message code="cliente.incidente.label" default="Incidente" />
+<div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'incidentes', 'error')} ">
+	<label for="incidentes">
+		<g:message code="cliente.incidentes.label" default="Incidentes" />
 		
 	</label>
 	
 <ul class="one-to-many">
-<g:each in="${clienteInstance?.incidente?}" var="i">
+<g:each in="${clienteInstance?.incidentes?}" var="i">
     <li><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">

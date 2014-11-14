@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${empleadoInstance?.telefono}">
-				<li class="fieldcontain">
-					<span id="telefono-label" class="property-label"><g:message code="empleado.telefono.label" default="Telefono" /></span>
-					
-						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${empleadoInstance}" field="telefono"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${empleadoInstance?.email}">
 				<li class="fieldcontain">
 					<span id="email-label" class="property-label"><g:message code="empleado.email.label" default="Email" /></span>
@@ -59,11 +50,31 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${empleadoInstance?.celular}">
+				<li class="fieldcontain">
+					<span id="celular-label" class="property-label"><g:message code="empleado.celular.label" default="Celular" /></span>
+					
+						<span class="property-value" aria-labelledby="celular-label"><g:fieldValue bean="${empleadoInstance}" field="celular"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${empleadoInstance?.estadoEmpleado}">
 				<li class="fieldcontain">
 					<span id="estadoEmpleado-label" class="property-label"><g:message code="empleado.estadoEmpleado.label" default="Estado Empleado" /></span>
 					
 						<span class="property-value" aria-labelledby="estadoEmpleado-label"><g:fieldValue bean="${empleadoInstance}" field="estadoEmpleado"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${empleadoInstance?.incidentes}">
+				<li class="fieldcontain">
+					<span id="incidentes-label" class="property-label"><g:message code="empleado.incidentes.label" default="Incidentes" /></span>
+					
+						<g:each in="${empleadoInstance.incidentes}" var="i">
+						<span class="property-value" aria-labelledby="incidentes-label"><g:link controller="incidente" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>
