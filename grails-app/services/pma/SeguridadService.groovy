@@ -54,7 +54,16 @@ class SeguridadService {
                                         o.estadoOpcion='Activo'
                                    """)
         println "xmenu=${xmenu}"
-        return xmenu
-        
+        return xmenu    
+    }
+    
+    def getUser(iduser){
+        def user=Usuario.executeQuery("""select u.login
+                    from Usuario u
+                    where u.id=${iduser}
+                  """)
+        println "user=${user}"
+        return user   
+ 
     }
 }
