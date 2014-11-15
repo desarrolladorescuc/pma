@@ -11,6 +11,8 @@
         <link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
         <!-- Bootstrap Core CSS -->
         <link href="${resource(dir:'tema/css', file: 'bootstrap.css')}" rel="stylesheet">      
+        <!-- Timeline CSS -->
+        <link href="${resource(dir:'tema/css', file:'timeline.css')}" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="${resource(dir:'tema/css', file:'sb-admin.css')}" rel="stylesheet">
         <link href="${resource(dir:'tema/css', file:'sb-admin-2.css')}" rel="stylesheet">
@@ -33,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">PMA - Mesa de ayuda Integral</a>
+                <a class="navbar-brand" href="#">PMA - Mesa de ayuda Integral</a>
             </div>
           <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">                
