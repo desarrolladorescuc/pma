@@ -39,7 +39,6 @@ html.no-cssgradients {
 }
 
 .content h1 {
-    border-bottom: 1px solid #CCCCCC;
     padding: 0 0.25em;
 }
 
@@ -159,7 +158,7 @@ fieldset,
 .fieldcontain .property-label {
     color: #666666;
     text-align: right;
-    width: 25%;
+    width: 20%;
 }
 
 .fieldcontain .property-label {

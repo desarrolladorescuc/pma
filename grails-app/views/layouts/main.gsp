@@ -60,7 +60,7 @@
                 </li>
             </ul>
          <!-- navbar-static-side -->    
-            <div class="sidebar-nav navbar-collapse navbar-ex1-collapse">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
                         <a href="${createLink(uri: '/')}"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>

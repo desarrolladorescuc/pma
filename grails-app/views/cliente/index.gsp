@@ -15,44 +15,43 @@
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 </ul>
             </div>
-            <div id="list-cliente" class="content scaffold-list" role="main">
-                <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <table class="table table-hover table-bordered">
-                <thead>
-                    <tr class="active">
-                        <g:sortableColumn property="nombre" title="${message(code: 'cliente.nombre.label', default: 'Nombre')}" />
-                        <g:sortableColumn property="cedula" title="${message(code: 'cliente.cedula.label', default: 'Cedula')}" />
-                        <g:sortableColumn property="email" title="${message(code: 'cliente.email.label', default: 'Email')}" />
-                        <g:sortableColumn property="celular" title="${message(code: 'cliente.celular.label', default: 'Celular')}" />
-                        <g:sortableColumn property="cargo" title="${message(code: 'cliente.cargo.label', default: 'Cargo')}" />
-                        <g:sortableColumn property="area" title="${message(code: 'cliente.area.label', default: 'Area')}" />
-                    </tr>
-                </thead>
-                <tbody>
-                    <g:each in="${clienteInstanceList}" status="i" var="clienteInstance">
-                        <tr class="${(i % 2) == 0 ? 'even' : 'odd'} ">
-
-                            <td><g:link action="show" id="${clienteInstance.id}">${fieldValue(bean: clienteInstance, field: "nombre")}</g:link></td>
-
-                            <td>${fieldValue(bean: clienteInstance, field: "cedula")}</td>
-
-                            <td>${fieldValue(bean: clienteInstance, field: "email")}</td>
-
-                            <td>${fieldValue(bean: clienteInstance, field: "celular")}</td>
-
-                            <td>${fieldValue(bean: clienteInstance, field: "cargo")}</td>
-
-                            <td>${fieldValue(bean: clienteInstance, field: "area")}</td>
-
-                        </tr>
-                    </g:each>
-                </tbody>
-            </table>
-            <div class="pagination">
-                <g:paginate total="${clienteInstanceCount ?: 0}" />
+            <div id="list-cliente" class="content scaffold-list col-lg-12" role="main">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+                </div>
+                <div class="panel-body">
+                    <g:if test="${flash.message}">
+                        <div class="message" role="status">${flash.message}</div>
+                    </g:if>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="active">
+                                <g:sortableColumn property="nombre" title="${message(code: 'cliente.nombre.label', default: 'Nombre')}" />
+                                <g:sortableColumn property="cedula" title="${message(code: 'cliente.cedula.label', default: 'Cedula')}" />
+                                <g:sortableColumn property="email" title="${message(code: 'cliente.email.label', default: 'Email')}" />
+                                <g:sortableColumn property="celular" title="${message(code: 'cliente.celular.label', default: 'Celular')}" />
+                                <g:sortableColumn property="cargo" title="${message(code: 'cliente.cargo.label', default: 'Cargo')}" />
+                                <g:sortableColumn property="area" title="${message(code: 'cliente.area.label', default: 'Area')}" />
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <g:each in="${clienteInstanceList}" status="i" var="clienteInstance">
+                                <tr class="${(i % 2) == 0 ? 'even' : 'odd'} ">
+                                    <td><g:link action="show" id="${clienteInstance.id}">${fieldValue(bean: clienteInstance, field: "nombre")}</g:link></td>
+                                    <td>${fieldValue(bean: clienteInstance, field: "cedula")}</td>
+                                    <td>${fieldValue(bean: clienteInstance, field: "email")}</td>
+                                    <td>${fieldValue(bean: clienteInstance, field: "celular")}</td>
+                                    <td>${fieldValue(bean: clienteInstance, field: "cargo")}</td>
+                                    <td>${fieldValue(bean: clienteInstance, field: "area")}</td>
+                                </tr>
+                            </g:each>
+                        </tbody>
+                    </table>
+                    <div class="pagination">
+                        <g:paginate total="${clienteInstanceCount ?: 0}" />
+                    </div>
+                </div>
             </div>
         </div>
     </body>
