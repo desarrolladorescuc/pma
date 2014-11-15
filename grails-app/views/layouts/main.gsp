@@ -21,7 +21,7 @@
         <!-- Custom Fonts -->
         <link href="${resource(dir:'tema/font/css', file:'font-awesome.min.css')}" rel="stylesheet" type="text/css">
         <!-- Grails CSS -->
-        <asset:stylesheet src="application.css"/>
+    <asset:stylesheet src="application.css"/>
 </head>
 <g:set var="seguridadService" bean="seguridadService"/>
 <body>
@@ -35,22 +35,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">PMA - Mesa de ayuda Integral</a>
+                <a class="navbar-brand" href="${createLink(uri: '/')}">PMA - Mesa de ayuda Integral</a>
             </div>
           <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">                
                 <li class="dropdown">
                     <% def xuser=seguridadService.getUser(session["idUsuario"])%>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${xuser[0]} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Mi Perfil</a>
-                        </li>                            
-                        <li class="divider"></li>
-                        <li>
-                            <a href="/pma/login/cerrarSesion"><i class="fa fa-fw fa-power-off"></i> Salir</a>
-                        </li>
-                    </ul>
+                    <g:if test="${xuser[0]==null}">
+                        <a href="/pma/login/" ><i class="glyphicon glyphicon-log-in"></i> <strong> Iniciar Sesion</strong></a>
+                            </g:if>
+                            <g:else>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${xuser[0]} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/pma/mainPanel"><i class="fa fa-bar-chart-o fa-fw"></i> Panel general</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="/pma/login/cerrarSesion"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesion</a>
+                            </li>
+                        </ul>
+                    </g:else>                        
+
                 </li>
             </ul>
          <!-- navbar-static-side -->    
@@ -60,11 +66,13 @@
                         <a href="${createLink(uri: '/')}"><i class="fa fa-fw fa-dashboard"></i> Inicio</a>
                     </li>
                     <% def xmenu=seguridadService.getMenu(session["idUsuario"])%>
-                    <g:each in="${xmenu}" status="i" var="menu">
-                        <li>   
-                            <a class="active" href="${menu[1]}"><i class="${menu[2]}"></i> ${menu[0]}</a>
-                        </li>
-                    </g:each>   
+                    <g:if test="${xmenu!=null}">
+                        <g:each in="${xmenu}" status="i" var="menu">
+                            <li>   
+                                <a class="active" href="${menu[1]}"><i class="${menu[2]}"></i> ${menu[0]}</a>
+                            </li>
+                        </g:each>
+                    </g:if>
                 </ul>
             </div>
         <!-- /.navbar-static-side -->
@@ -83,6 +91,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="${resource(dir:'tema/js',file:'bootstrap.min.js')}"></script>
     <!-- Grails JavaScript -->
-    <asset:javascript src="application.js"/>
+<asset:javascript src="application.js"/>
 </body>
 </html>

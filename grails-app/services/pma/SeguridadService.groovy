@@ -4,6 +4,7 @@ import grails.transaction.Transactional
 
 @Transactional
 class SeguridadService {
+    
     def getOperPorOpcion(iduser,url){
         
         def vec=url.split("/")
@@ -19,32 +20,33 @@ class SeguridadService {
         return operaciones
            
     }
+    
     def autorizacion(Long iduser,String uri){
         def excepciones=['/mainPanel/index']
         println "uri=${uri}"
-        if(excepciones.contains(uri)) return true
-        def  vec=uri.split("/")  
+        if(excepciones.contains(uri)){
+            return true
+        }
+        def  vec = uri.split("/")  
         println "vec=${vec}"
         def controlador=vec[1].toString()
-        def accion=vec[2].toString()
-    
         println "controlador=${controlador}"
+        def accion=vec[2].toString()   
         print "accion=${accion}"
         def query=""" SELECT  p.operacion  
-                   from Opcion o, Operacion p ,Usuario u
-                   where p.opcion.id=o.id and
-                                u.id=${iduser} and
-                            u.rol.id=o.rol.id and
-                       o.controlador='${controlador}' and
-                      p.operacion like '%${accion}%' and
-                      o.estadoOpcion='Activo'
-                """
-        //println "query=${query}"
-        def ctrl =Opcion.executeQuery(query)
+                    from Opcion o, Operacion p ,Usuario u
+                    where u.id=${iduser} and
+                        u.rol.id=o.rol.id and
+                        o.controlador='${controlador}' and
+                        p.operacion like '%${accion}%' and
+                        o.estadoOpcion='Activo'
+                  """
+        def ctrl = Opcion.executeQuery(query)
         println "ctrl=${ctrl}"
         println "ctrlsize=${ctrl.size()}"
         if(ctrl.size()>0) return true else return false  
     }
+    
     def getMenu(iduser){
         def xmenu=Opcion.executeQuery(""" 
                                       select o.opcion,o.url,o.claseCss from Opcion o, Usuario u where

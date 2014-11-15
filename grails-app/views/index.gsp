@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="main1"/>
+        <meta name="layout" content="main"/>
         <title>Bienvenido</title>
     </head>
     <body>
-        <div id="page-body" role="main">
-            <h1>Mesa de Ayuda Integral</h1>
-            <div class="row">
+        <div id="page-body" role="main">          
+            <div class="row">               
                 <div class="col-lg-11">
+                    <h1 class="text-center alert alert-info"><strong>Mesa de Ayuda Integral</strong></h1>
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Un mensaje de experiencia y con mucha Vision
