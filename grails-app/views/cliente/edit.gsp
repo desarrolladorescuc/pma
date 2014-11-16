@@ -36,11 +36,12 @@
                         <fieldset class="form">
                             <g:render template="form"/>
                         </fieldset>
-                    </div>
-                    <div class="panel-footer">  
-                        <fieldset class="buttons">
-                            <g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                        </fieldset>
+
+                        <div class="panel-footer">  
+                            <fieldset class="buttons">
+                                <g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                            </fieldset>
+                        </div>
                     </g:form>
                 </div>
             </div>

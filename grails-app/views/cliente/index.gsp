@@ -48,8 +48,10 @@
                             </g:each>
                         </tbody>
                     </table>
-                    <div class="pagination">
-                        <g:paginate total="${clienteInstanceCount ?: 0}" />
+                    <div class="panel-footer">
+                        <div class="pagination">
+                            <g:paginate total="${clienteInstanceCount ?: 0}" />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@
                 </ul>
             </div>
             <div id="show-cliente" class="content scaffold-show col-lg-11"  role="main">
-                <div class="panel panel-info">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2><g:message code="default.show.label" args="[entityName]" /></h2>
                 </div>

@@ -9,7 +9,7 @@
             <div class="row">               
                 <div class="col-lg-11">
                     <h1 class="text-center alert alert-info"><strong>Mesa de Ayuda Integral</strong></h1>
-                    <div class="panel panel-info">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                             <i class="fa fa-bar-chart-o fa-fw"></i> Un mensaje de experiencia y con mucha Vision
                         </div>
@@ -27,7 +27,7 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-                    <div class="panel panel-info">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
                             <i class="fa fa-clock-o fa-fw"></i> Conoce Como Te Ayudamos
                         </div>
