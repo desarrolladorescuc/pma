@@ -28,8 +28,6 @@
 					
 						<g:sortableColumn property="descripcion" title="${message(code: 'valorParametro.descripcion.label', default: 'Descripcion')}" />
 					
-						<g:sortableColumn property="orden" title="${message(code: 'valorParametro.orden.label', default: 'Orden')}" />
-					
 						<g:sortableColumn property="estadoValorParametro" title="${message(code: 'valorParametro.estadoValorParametro.label', default: 'Estado Valor Parametro')}" />
 					
 						<th><g:message code="valorParametro.parametros.label" default="Parametros" /></th>
@@ -43,8 +41,6 @@
 						<td><g:link action="show" id="${valorParametroInstance.id}">${fieldValue(bean: valorParametroInstance, field: "valor")}</g:link></td>
 					
 						<td>${fieldValue(bean: valorParametroInstance, field: "descripcion")}</td>
-					
-						<td>${fieldValue(bean: valorParametroInstance, field: "orden")}</td>
 					
 						<td>${fieldValue(bean: valorParametroInstance, field: "estadoValorParametro")}</td>
 					

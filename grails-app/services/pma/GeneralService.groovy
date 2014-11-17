@@ -6,17 +6,19 @@ import grails.transaction.Transactional
 class GeneralService {
 
     def getValorParametros(Integer idparametro) {
-        
-        return  ValorParametro.executeQuery("""from ValorParametro v  
+        def param = ValorParametro.executeQuery("""select valor
+                                                from ValorParametro v  
                                                 where v.parametros.id=${idparametro} and
-                                                v.estadoValorParametro='A' """)
+                                                v.estadoValorParametro='Activo' """)
+        println "param=${param}"
+        return param
     }
     
     def getValorParametro(Integer idvalparametro) {        
         /* return  ValorParametro.executeQuery("""select valor from ValorParametro v  
-        where v.id=${idvalparametro} and
-        v.estadoValorParametro='A' """)*/
-        def resp= ValorParametro.findByIdAndEstadoValorParametro(idvalparametro,'A')        
+                                                    where v.id=${idvalparametro} and
+                                                    v.estadoValorParametro='A' """)*/
+        def resp= ValorParametro.findByIdAndEstadoValorParametro(idvalparametro,'Activo')        
         return resp  
     }
 

@@ -1,5 +1,6 @@
 <%@ page import="pma.Incidente" %>
 
+<%--<g:set var="generalService" bean="generalService"/>--%>
 <div class="fieldcontain form-group ${hasErrors(bean: incidenteInstance, field: 'registro', 'error')} required">
     <label for="registro" class="col-sm-2 control-label">
         <g:message code="incidente.registro.label" default="Reportado" />
@@ -55,8 +56,13 @@
         <g:message code="incidente.idPrioridadIncidente.label" default="Prioridad" />
         <span class="required-indicator">*</span>
     </label>
-    <div class="col-sm-2">
+    <div class="col-sm-3">
         <g:field class="form-control" name="idPrioridadIncidente" type="number" value="${incidenteInstance.idPrioridadIncidente}" required=""/>
+        <%--<g:select name="idPrioridadIncidente" from="${generalService.getValorParametros(3)}"          
+            optionKey="id"
+            value="${incidenteInstance.idPrioridadIncidente}"
+            noSelection="['':'Seleccione Prioridad']"
+            />--%>
     </div>
 </div>
 

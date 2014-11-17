@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${valorParametroInstance?.orden}">
-				<li class="fieldcontain">
-					<span id="orden-label" class="property-label"><g:message code="valorParametro.orden.label" default="Orden" /></span>
-					
-						<span class="property-value" aria-labelledby="orden-label"><g:fieldValue bean="${valorParametroInstance}" field="orden"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${valorParametroInstance?.estadoValorParametro}">
 				<li class="fieldcontain">
 					<span id="estadoValorParametro-label" class="property-label"><g:message code="valorParametro.estadoValorParametro.label" default="Estado Valor Parametro" /></span>

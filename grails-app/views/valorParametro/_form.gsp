@@ -20,21 +20,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: valorParametroInstance, field: 'orden', 'error')} ">
-	<label for="orden">
-		<g:message code="valorParametro.orden.label" default="Orden" />
-		
-	</label>
-	<g:textField name="orden" maxlength="3" value="${valorParametroInstance?.orden}"/>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: valorParametroInstance, field: 'estadoValorParametro', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: valorParametroInstance, field: 'estadoValorParametro', 'error')} required">
 	<label for="estadoValorParametro">
 		<g:message code="valorParametro.estadoValorParametro.label" default="Estado Valor Parametro" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="estadoValorParametro" maxlength="1" value="${valorParametroInstance?.estadoValorParametro}"/>
+	<g:select name="estadoValorParametro" from="${valorParametroInstance.constraints.estadoValorParametro.inList}" required="" value="${valorParametroInstance?.estadoValorParametro}" valueMessagePrefix="valorParametro.estadoValorParametro"/>
 
 </div>
 
